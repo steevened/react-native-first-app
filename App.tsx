@@ -1,10 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { Image, StyleSheet, Text, View } from "react-native";
+import { ImageViewer } from "./components/ImageViewer";
+
+const placeholderImage = require("./assets/pic.webp");
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <View style={styles.imageContainer}>
+        <ImageViewer placeholderImage={placeholderImage} />
+      </View>
       <StatusBar style="auto" />
     </View>
   );
@@ -13,8 +18,17 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#25292e",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  imageContainer: {
+    flex: 1,
+    paddingTop: 60,
+  },
+  image: {
+    width: 320,
+    height: 440,
+    borderRadius: 20,
   },
 });
